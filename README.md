@@ -27,8 +27,13 @@ Where
 
 Requirements
 
-- [exrm ~> 0.19.9](https://github.com/bitwalker/exrm) is tool to build standalone elixir releases, add to app deps
 - define ID_RSA variable in your CI, it's your ssh key private value
 - add public ssh key to ~/.ssh/authorized_keys in deploy server
 - mkdir releases directory in deploy server, for example for elixir it's ~/elixir_releases
 - if you want use "run" cmd, you should install and configure supervisord app in in deploy server
+- comment line with "requiretty" in file /etc/sudoers in deploy server
+
+Elixir releases requirements
+
+- [exrm ~> 0.19.9](https://github.com/bitwalker/exrm) is tool to build standalone elixir releases, add to app deps
+- it's good (but not required) to use code analysis tool [silverb ~> 0.0.1](https://github.com/timCF/silverb)
