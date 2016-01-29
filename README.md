@@ -7,11 +7,10 @@ Configure your .gitlab-ci.yml file like this (example is elixir app)
 elixir:
   script:
   - echo "getting cibash scripts"
-  - git clone https://github.com/timCF/cibash.git
-  - cp ./cibash/elixir.sh ./elixir.sh
-  - rm -rf ./cibash
+  - wget https://github.com/timCF/cibash/archive/0.0.1.tar.gz
+  - tar xvzf ./0.0.1.tar.gz
   - echo "START elixir build script"
-  - ./elixir.sh app_name erlang_nodename user@my-prod-server.com run
+  - ./cibash-0.0.1/elixir.sh app_name erlang_nodename user@my-prod-server.com run
   - echo "END elixir build script"
   tags:
   - elixir
