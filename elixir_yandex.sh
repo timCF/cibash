@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # check and prepare args
 if [[ $# -ne 3 ]]; then
