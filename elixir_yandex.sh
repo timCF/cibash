@@ -35,8 +35,8 @@ function deploy_build {
 	cd ..
 	if [[ "$THIS_DIR" -ne "$ERLANG_NODE" ]]; then
 		rm -rf ./$ERLANG_NODE
+		mv ./$THIS_DIR ./$ERLANG_NODE
 	fi
-	mv ./$THIS_DIR ./$ERLANG_NODE &&
 	rm -rf ./$RELEASE_FILENAME &&
 	tar -zcvf $RELEASE_FILENAME ./$ERLANG_NODE &&
 	rm -rf ./$ERLANG_NODE &&
