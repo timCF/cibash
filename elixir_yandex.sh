@@ -87,6 +87,8 @@ function main {
 	mix local.rebar --force &&
 	mix deps.clean --all &&
 	mix clean &&
+	rm -rf ./_build &&
+	rm -rf ./rel &&
 	mix deps.get &&
 	mix deps.compile &&
 	mix compile.protocols &&
