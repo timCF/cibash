@@ -13,9 +13,9 @@ THIS_APP=$1
 ERLANG_NODE=$2
 RELEASE_MODE=$3
 if [[ -z "$TRAVIS_OS_NAME" ]]; then
-	RELEASE_FILENAME="$ERLANG_NODE"_"$TRAVIS_OS_NAME".tar.gz
-else
 	RELEASE_FILENAME="$ERLANG_NODE".tar.gz
+else
+	RELEASE_FILENAME="$ERLANG_NODE"_"$TRAVIS_OS_NAME".tar.gz
 fi
 if [[ ! $RELEASE_MODE =~ ^(build|rel)$ ]]; then
 	echo "bad release mode $RELEASE_MODE"
