@@ -25,7 +25,7 @@ fi
 # define functions
 
 function deploy_upload {
-	local UPLOAD_URL=$(curl -H "\"$YANDEX_TOKEN\"" "https://cloud-api.yandex.net/v1/disk/resources/upload?fields=href&overwrite=true&path=%2Felixir_releases%2F$RELEASE_FILENAME" | sed -e 's/^.*"href"[ ]*:[ ]*"//' -e 's/".*//') &&
+	local UPLOAD_URL=$(curl -H \"$YANDEX_TOKEN\" "https://cloud-api.yandex.net/v1/disk/resources/upload?fields=href&overwrite=true&path=%2Felixir_releases%2F$RELEASE_FILENAME" | sed -e 's/^.*"href"[ ]*:[ ]*"//' -e 's/".*//') &&
 	curl $UPLOAD_URL --upload-file $RELEASE_FILENAME &&
 	rm -rf ./$RELEASE_FILENAME
 }
