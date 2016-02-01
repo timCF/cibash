@@ -98,4 +98,4 @@ function main {
 }
 
 # execute
-main || echo "FAIL"
+main || exit 1
