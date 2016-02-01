@@ -56,7 +56,7 @@ function deploy_rel {
 	cd ./$ERLANG_NODE &&
 	tar xvfz $THIS_APP.tar.gz &&
 	rm -rf $THIS_APP.tar.gz &&
-	sed -i "" "s/-name\ $THIS_APP@127\.0\.0\.1/-sname\ $ERLANG_NODE/g" ./releases/0.0.1/vm.args &&
+	sed -i "s/-name\ $THIS_APP@127\.0\.0\.1/-sname\ $ERLANG_NODE/g" ./releases/0.0.1/vm.args &&
 	cd .. &&
 	tar -zcvf $RELEASE_FILENAME ./$ERLANG_NODE &&
 	rm -rf ./$ERLANG_NODE &&
