@@ -37,3 +37,5 @@ Elixir releases requirements
 
 - [exrm ~> 0.19.9](https://github.com/bitwalker/exrm) is tool to build standalone elixir releases, add to app deps
 - it's good (but not required) to use code analysis tool [silverb ~> 0.0.1](https://github.com/timCF/silverb)
+
+To get yandex token, go [here](https://oauth.yandex.ru/authorize?response_type=token&client_id=7ef348d4d4da4559be55d0bfeb92eef7)
