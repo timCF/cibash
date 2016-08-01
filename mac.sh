@@ -8,7 +8,7 @@ brew install wget curl elixir node gcc python openssl nginx ruby protobuf
 brew install homebrew/versions/mysql56
 mix local.hex --force
 mix local.rebar --force
-apm install language-elixir autocomplete-elixir
+apm install language-elixir autocomplete-elixir language-protobuf
 npm cache clean
 npm install npm -g
 npm install phantomjs-prebuilt iced-coffee-script brunch bower -g
