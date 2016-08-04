@@ -39,3 +39,8 @@ Elixir releases requirements
 - it's good (but not required) to use code analysis tool [silverb ~> 0.0.1](https://github.com/timCF/silverb)
 
 To get yandex token, go [here](https://oauth.yandex.ru/authorize?response_type=token&client_id=7ef348d4d4da4559be55d0bfeb92eef7)
+
+mac.sh
+======
+
+script installs dev env for elixir development, needs xcode installed and activated!
