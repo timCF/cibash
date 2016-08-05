@@ -16,5 +16,5 @@ npm cache clean
 npm install npm -g
 npm install phantomjs-prebuilt iced-coffee-script brunch bower -g
 sudo chown -R $(whoami) /Library/Ruby/Gems/2.0.0
-gem install sass
+gem install sass jekyll
 pip install csv2xlsx
