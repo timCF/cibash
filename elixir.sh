@@ -54,7 +54,7 @@ function deploy {
 	fi
 	ssh -o StrictHostKeyChecking=no -i $ID_RSA_FILENAME $RELEASE_SERVER "$DEPLOY_BEGIN cd $RELEASES_DIR && rm -rf $ERLANG_NODE && mkdir $ERLANG_NODE" &&
 	scp -rp -o StrictHostKeyChecking=no -i $ID_RSA_FILENAME $RELEASE_FILE "$RELEASE_SERVER:$RELEASES_DIR/$ERLANG_NODE/$ERLANG_NODE.tar.gz" &&
-	ssh -o StrictHostKeyChecking=no -i $ID_RSA_FILENAME $RELEASE_SERVER "cd $RELEASES_DIR/$ERLANG_NODE && tar xvfz $ERLANG_NODE.tar.gz && sed -i 's/-name\ $THIS_APP@127\.0\.0\.1/-sname\ $ERLANG_NODE/g' ./releases/0.0.1/vm.args $DEPLOY_END"
+	ssh -o StrictHostKeyChecking=no -i $ID_RSA_FILENAME $RELEASE_SERVER "cd $RELEASES_DIR/$ERLANG_NODE && tar xvfz $ERLANG_NODE.tar.gz && sed -i 's/-sname\ $THIS_APP/-sname\ $ERLANG_NODE/g' ./releases/0.0.1/vm.args $DEPLOY_END"
 }
 function maybe_check_silverb {
 	if grep -q "silverb" "./mix.lock" ; then
