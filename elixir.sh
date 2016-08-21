@@ -9,7 +9,7 @@ THIS_APP=$1
 ERLANG_NODE=$2
 RELEASE_SERVER=$3
 RELEASE_MODE=$4
-RELEASE_FILE="$(pwd)/rel/$THIS_APP/releases/0.0.1/$THIS_APP.tar.gz"
+RELEASE_FILE="$(pwd)/rel/$THIS_APP/releases/0.1.0/$THIS_APP.tar.gz"
 GIT_FILENAME="$(pwd)/gitenv.sh"
 ID_RSA_FILENAME="$(pwd)/id_rsa"
 if [[ ! $RELEASE_SERVER =~ ^[^@]+@[^@]+$ ]]; then
@@ -54,7 +54,7 @@ function deploy {
 	fi
 	ssh -o StrictHostKeyChecking=no -i $ID_RSA_FILENAME $RELEASE_SERVER "$DEPLOY_BEGIN cd $RELEASES_DIR && rm -rf $ERLANG_NODE && mkdir $ERLANG_NODE" &&
 	scp -rp -o StrictHostKeyChecking=no -i $ID_RSA_FILENAME $RELEASE_FILE "$RELEASE_SERVER:$RELEASES_DIR/$ERLANG_NODE/$ERLANG_NODE.tar.gz" &&
-	ssh -o StrictHostKeyChecking=no -i $ID_RSA_FILENAME $RELEASE_SERVER "cd $RELEASES_DIR/$ERLANG_NODE && tar xvfz $ERLANG_NODE.tar.gz && sed -i 's/-sname\ $THIS_APP/-sname\ $ERLANG_NODE/g' ./releases/0.0.1/vm.args $DEPLOY_END"
+	ssh -o StrictHostKeyChecking=no -i $ID_RSA_FILENAME $RELEASE_SERVER "cd $RELEASES_DIR/$ERLANG_NODE && tar xvfz $ERLANG_NODE.tar.gz && sed -i 's/-sname\ $THIS_APP/-sname\ $ERLANG_NODE/g' ./releases/0.1.0/vm.args $DEPLOY_END"
 }
 function maybe_check_silverb {
 	if grep -q "silverb" "./mix.lock" ; then
