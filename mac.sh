@@ -5,7 +5,7 @@ brew update
 brew cask
 brew cask update
 brew cask install iterm2 google-chrome firefox atom amethyst slack skype java libreoffice thunderbird puush dropbox
-brew install wget curl elixir node gcc python openssl nginx ruby protobuf fop
+brew install wget curl elixir node python openssl nginx ruby protobuf fop
 brew install homebrew/versions/mysql56
 brew tap homebrew/dupes
 brew install grep
