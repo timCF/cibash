@@ -11,7 +11,7 @@ brew tap homebrew/dupes
 brew install grep
 mix local.hex --force
 mix local.rebar --force
-apm install language-elixir autocomplete-elixir language-protobuf atom-jade language-sass
+apm install language-elixir autocomplete-elixir language-protobuf atom-jade language-sass language-erlang
 npm cache clean
 npm install npm -g
 npm install phantomjs-prebuilt iced-coffee-script brunch bower -g
