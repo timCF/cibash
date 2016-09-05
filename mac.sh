@@ -8,7 +8,7 @@ brew cask install iterm2 google-chrome firefox atom amethyst slack skype java li
 brew install wget curl elixir node python openssl nginx ruby protobuf fop
 brew install homebrew/versions/mysql56
 brew tap homebrew/dupes
-brew install grep
+brew install grep libtool automake autoconf
 mix local.hex --force
 mix local.rebar --force
 apm install language-elixir autocomplete-elixir language-protobuf atom-jade language-sass language-erlang language-iced-coffee-script
