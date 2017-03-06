@@ -3,8 +3,7 @@
 
 GIT_FILENAME="$(pwd)/gitenv.sh"
 ID_RSA_FILENAME="$(pwd)/id_rsa"
-TOCOPY=$1
-RELEASE_SERVER=$2
+RELEASE_SERVER=$1
 
 if [[ ! $RELEASE_SERVER =~ ^[^@]+@[^@]+$ ]]; then
 	echo "bad release server name $RELEASE_SERVER"
