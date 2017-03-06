@@ -39,7 +39,12 @@ function main {
 	tmp_files_new &&
 	export GIT_SSH=$GIT_FILENAME &&
 	echo "test ssh key : $(ssh -o StrictHostKeyChecking=no -i $ID_RSA_FILENAME git@git.maxbet.asia)" &&
-	scp -rp -o StrictHostKeyChecking=no -i $ID_RSA_FILENAME $TOCOPY $RELEASE_SERVER &&
+	git submodule update --init --recursive &&
+	npm install &&
+	bower install &&
+	brunch b --production &&
+	brunch b --production &&
+	scp -rp -o StrictHostKeyChecking=no -i $ID_RSA_FILENAME ./public/ $RELEASE_SERVER &&
 	tmp_files_delete &&
 	echo "SUCCESS"
 }
