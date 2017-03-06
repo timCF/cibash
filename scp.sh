@@ -39,7 +39,7 @@ function main {
 	tmp_files_new &&
 	export GIT_SSH=$GIT_FILENAME &&
 	echo "test ssh key : $(ssh -o StrictHostKeyChecking=no -i $ID_RSA_FILENAME git@git.maxbet.asia)" &&
-	scp -r $TOCOPY $RELEASE_SERVER &&
+	scp -rp -o StrictHostKeyChecking=no -i $ID_RSA_FILENAME $TOCOPY $RELEASE_SERVER &&
 	tmp_files_delete &&
 	echo "SUCCESS"
 }
